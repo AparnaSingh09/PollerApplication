@@ -13,8 +13,8 @@ func main() {
 	userMap := make(map[string]model.User)
 	pollMap := make(map[string]model.Poll)
 	pollService := service.NewPollService(userMap, pollMap)
-	pollController := controller.NewPollController(*pollService)
-	router := setupRouter(*pollController)
+	pollController := controller.NewPollController(pollService)
+	router := setupRouter(pollController)
 	// Serve static files from the React app
 	fs := http.FileServer(http.Dir("./frontend/build"))
 	http.Handle("/", fs)
@@ -49,9 +49,9 @@ func setupRouter(controller controller.PollController) *gin.Engine {
 
 	router.POST("/poll", controller.SavePollToMap)
 
-	router.GET("/poll/:id", controller.GetPollByIdV2)
+	router.GET("/poll/:id", controller.GetPollById)
 
-	router.GET("/updatePoll", controller.UpdatePollResultV2)
+	router.GET("/updatePoll", controller.UpdatePollResult)
 
 	return router
 
