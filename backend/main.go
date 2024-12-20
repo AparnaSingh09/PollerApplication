@@ -15,9 +15,9 @@ func main() {
 	pollService := service.NewPollService(userMap, pollMap)
 	pollController := controller.NewPollController(*pollService)
 	router := setupRouter(*pollController)
-	/*	// Serve static files from the React app
-		fs := http.FileServer(http.Dir("./frontend/build"))
-		http.Handle("/", fs)*/
+	// Serve static files from the React app
+	fs := http.FileServer(http.Dir("./frontend/build"))
+	http.Handle("/", fs)
 
 	err := router.Run(":8080")
 	if err != nil {
