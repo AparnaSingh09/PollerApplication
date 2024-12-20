@@ -1,0 +1,82 @@
+/* SecondComponent.css */
+.second-component-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: #f0f8ff;
+    height: 100vh;
+}
+
+.second-component-h1 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Button container to align buttons next to each other */
+.button-container {
+    display: flex;
+    gap: 10px; /* Space between buttons */
+    margin-top: 10px; /* Optional: Add some space above the button container */
+}
+
+.poll-input {
+    padding: 10px;
+    font-size: 1rem;
+    border: 2px solid #4a90e2;
+    border-radius: 5px;
+    width: 300px;
+    margin-bottom: 10px;
+}
+
+.poll-input:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.add-option-button,
+.submit-poll-button,
+.join-poll-button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: white;
+    background-color: #4a90e2;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+}
+
+.add-option-button:hover,
+.submit-poll-button:hover,
+.join-poll-button:hover {
+    background-color: #007bff;
+}
+
+.error-message {
+    color: red;
+    margin-top: 10px;
+}
+
+.response {
+    margin-top: 20px;
+    white-space: pre-wrap; /* Preserve formatting for JSON */
+    background-color: #e0f7fa;
+    padding: 10px;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 600px;
+}
+
+/* New styles for Join Poll container */
+.join-poll-container {
+    position: absolute; /* Position it on the right side */
+    right: 20px; /* Adjust as needed */
+    top: 370px; /* Adjust as needed */
+    display: flex;
+    flex-direction: column; /* Stack input and button */
+    align-items: flex-end; /* Align to the right */
+}

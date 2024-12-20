@@ -1,0 +1,33 @@
+.title {
+  color: blueviolet;
+}
+
+.card {
+  border: 1px solid black;
+  box-shadow: 5px 5px 5px black;
+  padding: 20px;
+  text-align: center;
+}
+
+img{
+  width: 300px; 
+  height: 200px;
+}
+
+.student{
+  border: 1px solid;
+}
+
+.student p {
+  margin: 0cap;
+}
+
+.box {
+  border: 3px solid;
+  padding: 25px;
+}
+
+.first-component-h1{
+  text-align: center;
+  border: 3px solid;
+}
