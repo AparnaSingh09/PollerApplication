@@ -4,6 +4,8 @@ import (
 	"PollerApplication/controller"
 	"PollerApplication/model"
 	"PollerApplication/service"
+	"fmt"
+	"github.com/gin-contrib/static"
 	"github.com/gin-gonic/gin"
 	"log"
 	"net/http"
@@ -16,8 +18,6 @@ func main() {
 	pollController := controller.NewPollController(pollService)
 	router := setupRouter(pollController)
 	// Serve static files from the React app
-	fs := http.FileServer(http.Dir("./frontend/build"))
-	http.Handle("/", fs)
 
 	err := router.Run(":8080")
 	if err != nil {
@@ -52,6 +52,13 @@ func setupRouter(controller controller.PollController) *gin.Engine {
 	router.GET("/poll/:id", controller.GetPollById)
 
 	router.GET("/updatePoll", controller.UpdatePollResult)
+
+	router.Use(static.Serve("/", static.LocalFile("./dist", true)))
+
+	router.GET("/app", func(c *gin.Context) {
+		fmt.Println("hello")
+		c.File("./dist/index.html")
+	})
 
 	return router
 

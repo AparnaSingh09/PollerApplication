@@ -15,7 +15,7 @@ function FirstComponent() {
 
     const handleNext = () => {
         setName(inputName);
-        navigate('/second');
+        navigate('/app/second');
     };
 
     return (

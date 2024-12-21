@@ -68,7 +68,7 @@ function SecondComponent() {
 
             setPoll(result.data);
             setResponse(result.data);
-            navigate('/third');
+            navigate('/app/third');
         } catch (err) {
             setError(err.message);
         }

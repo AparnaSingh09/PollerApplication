@@ -10,9 +10,9 @@ function App() {
     <Router>
       <NameProvider>
         <Routes>
-          <Route path="/" element={<FirstComponent />} />
-          <Route path="/second" element={<SecondComponent />} />
-          <Route path="/third" element={<ThirdComponent />} />
+          <Route path="*" element={<FirstComponent />} />
+          <Route path="/app/second" element={<SecondComponent />} />
+          <Route path="/app/third" element={<ThirdComponent />} />
           </Routes>
       </NameProvider>
     </Router>
